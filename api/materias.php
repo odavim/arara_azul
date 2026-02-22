@@ -12,8 +12,8 @@ try {
 
 } catch (PDOException $e) {
     http_response_code(500);
-
     echo json_encode([
         "erro" => "Erro ao buscar matérias"
     ]);
-};
+    error_log("Erro em materias.php: " . $e->getMessage());
+}
